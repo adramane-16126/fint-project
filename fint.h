@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <limits>
+#include <unordered_map>
 
 // choix d'un type entier non signé
 typedef unsigned long int int_t;
@@ -63,8 +64,12 @@ public:
    // écriture de a sur un flot de sortie
    friend std::ostream& operator<<(std::ostream& os, const fint& a);
 
+   // Affiche les facteurs et leurs multiplicités
+   void print_facts();
+
 private:
    int_t val;
+   std::unordered_map<int_t, int_t> facts;
 };
 
 #endif
